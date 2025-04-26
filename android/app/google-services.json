@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "669160830537",
+    "project_id": "quizly-cb4c1",
+    "storage_bucket": "quizly-cb4c1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669160830537:android:fc508a2c6a77b7a10ff198",
+        "android_client_info": {
+          "package_name": "com.example.quizly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALP5mdYNfjwc8EoF4_H30XWmE98lJPpA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
