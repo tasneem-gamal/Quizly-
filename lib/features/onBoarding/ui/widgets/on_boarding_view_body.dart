@@ -15,7 +15,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), (){
+    Future.delayed(const Duration(seconds: 5), (){
       if (!mounted) return;
       context.pushNamedAndRemoveUntil(Routes.homeView, (Route<dynamic> route) => false,);
     });
