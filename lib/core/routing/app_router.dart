@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/core/routing/routes.dart';
-import 'package:quizly/features/onBoarding/widgets/on_boarding_view.dart';
+import 'package:quizly/features/onBoarding/ui/on_boarding_view.dart';
 
 class AppRouter {
   Route? generateRoutes(RouteSettings settings){
