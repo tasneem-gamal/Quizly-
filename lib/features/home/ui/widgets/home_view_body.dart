@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
-import 'package:quizly/features/home/ui/widgets/package_item.dart';
+import 'package:quizly/features/home/ui/widgets/package_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -22,12 +22,10 @@ class HomeViewBody extends StatelessWidget {
             style: CustomTextStyles.font16LightGrayRegular(),
           ),
           verticalSpace(40),
-          const PackageItem(
-            image: 'assets/images/sports.png',
-            text: 'Sports Package',
-          )
+          const PackageListView()
         ],
       ),
     );
   }
 }
+

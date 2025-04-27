@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:quizly/core/helpers/spacing.dart';
+import 'package:quizly/features/home/ui/widgets/package_item.dart';
+
+class PackageListView extends StatelessWidget {
+  const PackageListView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+          itemBuilder: (context, index) => const PackageItem(
+                image: 'assets/images/sports.png',
+                text: 'Sports Package',
+              ),
+          separatorBuilder: (context, index) => verticalSpace(50),
+          itemCount: 2),
+    );
+  }
+}
