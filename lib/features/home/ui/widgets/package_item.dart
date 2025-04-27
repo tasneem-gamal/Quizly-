@@ -61,7 +61,7 @@ class PackageItem extends StatelessWidget {
         ),
       ),
       Positioned(
-          top: -30,
+          top: -50,
           right: -20,
           child: Image.asset(
             image,

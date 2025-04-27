@@ -7,13 +7,24 @@ class PackageListView extends StatelessWidget {
     super.key,
   });
 
+  final List<Map<String, String>> packages = const [
+    {
+      'image': 'assets/images/sports.png',
+      'text': 'Sports Package',
+    },
+    {
+      'image': 'assets/images/programming.png',
+      'text': 'Programming Package',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
-          itemBuilder: (context, index) => const PackageItem(
-                image: 'assets/images/sports.png',
-                text: 'Sports Package',
+          itemBuilder: (context, index) => PackageItem(
+                image: packages[index]['image']!,
+                text: packages[index]['text']!,
               ),
           separatorBuilder: (context, index) => verticalSpace(50),
           itemCount: 2),
