@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizly/core/helpers/extension.dart';
 import 'package:quizly/core/helpers/spacing.dart';
+import 'package:quizly/core/routing/routes.dart';
 import 'package:quizly/features/home/ui/widgets/package_item.dart';
 
 class PackageListView extends StatelessWidget {
@@ -25,6 +27,9 @@ class PackageListView extends StatelessWidget {
           itemBuilder: (context, index) => PackageItem(
                 image: packages[index]['image']!,
                 text: packages[index]['text']!,
+                onPressed: (){
+                  context.pushNamed(Routes.quizView);
+                },
               ),
           separatorBuilder: (context, index) => verticalSpace(50),
           itemCount: 2),

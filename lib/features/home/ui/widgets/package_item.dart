@@ -43,7 +43,7 @@ class PackageItem extends StatelessWidget {
           children: [
             IconButton(
                 padding: const EdgeInsets.only(left: 20, bottom: 10),
-                onPressed: () {},
+                onPressed: onPressed,
                 icon: const Icon(
                   Icons.play_circle,
                   size: 50,
