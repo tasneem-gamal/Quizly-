@@ -22,7 +22,10 @@ class HomeViewBody extends StatelessWidget {
             style: CustomTextStyles.font16LightGrayRegular(),
           ),
           verticalSpace(40),
-          const PackageItem()
+          const PackageItem(
+            image: 'assets/images/sports.png',
+            text: 'Sports Package',
+          )
         ],
       ),
     );

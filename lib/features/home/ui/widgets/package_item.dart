@@ -7,7 +7,17 @@ import 'package:quizly/core/theme/styles.dart';
 class PackageItem extends StatelessWidget {
   const PackageItem({
     super.key,
+    required this.image,
+    this.imgWidth,
+    this.imgHeight,
+    required this.text,
+    this.onPressed,
   });
+
+  final String image;
+  final double? imgWidth, imgHeight;
+  final String text;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +52,7 @@ class PackageItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
-                'Sports Package',
+                text,
                 style: CustomTextStyles.font24WhiteSemiBold()
                     .copyWith(fontSize: 20),
               ),
@@ -54,9 +64,9 @@ class PackageItem extends StatelessWidget {
           top: -30,
           right: -20,
           child: Image.asset(
-            'assets/images/sports.png',
-            width: 200,
-            height: 200,
+            image,
+            width: imgWidth ?? 200 ,
+            height: imgHeight ?? 200,
           ))
     ]);
   }
