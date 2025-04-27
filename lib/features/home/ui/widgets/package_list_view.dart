@@ -10,11 +10,11 @@ class PackageListView extends StatelessWidget {
   final List<Map<String, String>> packages = const [
     {
       'image': 'assets/images/sports.png',
-      'text': 'Sports Package',
+      'text': 'Sports Questions',
     },
     {
       'image': 'assets/images/programming.png',
-      'text': 'Programming Package',
+      'text': 'Programming Questions',
     },
   ];
 
