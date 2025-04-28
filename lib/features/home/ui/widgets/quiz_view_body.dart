@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/core/theme/styles.dart';
+import 'package:quizly/features/home/ui/widgets/custom_answer_button.dart';
 
 class QuizViewBody extends StatelessWidget {
   const QuizViewBody({super.key});
@@ -30,30 +31,3 @@ class QuizViewBody extends StatelessWidget {
   }
 }
 
-class CustomAnswerButton extends StatelessWidget {
-  const CustomAnswerButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 60,
-      child: ElevatedButton(
-        onPressed: (){}, 
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12)
-          )
-        ),
-        child: Text(
-          'Germany',
-          style: CustomTextStyles.font24WhiteSemiBold().copyWith(
-            color: ColorsManager.mainBlue
-          ),
-        )
-      ),
-    );
-  }
-}
