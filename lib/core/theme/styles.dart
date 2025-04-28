@@ -21,4 +21,10 @@ class CustomTextStyles{
         fontWeight: FontWeightHelper.regular,
         color: const Color.fromARGB(255, 233, 233, 233),
       );
+
+  static TextStyle font16GrayRegular() => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: ColorsManager.lightGray
+      );
 }

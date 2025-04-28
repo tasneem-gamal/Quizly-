@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Are you ready?',
-            style: CustomTextStyles.font16LightGrayRegular(),
+            style: CustomTextStyles.font16GrayRegular(),
           ),
           verticalSpace(40),
           const PackageListView()

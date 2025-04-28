@@ -8,7 +8,7 @@ class QuizProvider with ChangeNotifier{
 
   List<QuizModel> _quizzes = [];
   bool _isLoading = false;
-  final int _currentQuestionIndex = 0;
+  int _currentQuestionIndex = 0;
 
 
   List<QuizModel> get quizzes => _quizzes;
