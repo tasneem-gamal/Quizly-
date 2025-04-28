@@ -9,24 +9,34 @@ class QuizViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'question 4 of 10',
-            style: CustomTextStyles.font16LightGrayRegular(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'question 4 of 10',
+                style: CustomTextStyles.font16LightGrayRegular(),
+              ),
+              verticalSpace(10),
+              Text(
+                'Which programming language is mainly used for Android development?',
+                style: CustomTextStyles.font24WhiteSemiBold(),
+                softWrap: true,
+              ),
+            ],
           ),
-          verticalSpace(10),
-          Text(
-            'Which programming language is mainly used for Android development?',
-            style: CustomTextStyles.font24WhiteSemiBold(),
-            softWrap: true,
-          ),
-          CustomAnswerButton(
-            text: 'Germany',
-            onPressed: (){},
-          )
+          ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => CustomAnswerButton(
+                    text: 'Germany',
+                    onPressed: () {},
+                  ),
+              separatorBuilder: (context, index) => verticalSpace(12),
+              itemCount: 4)
         ],
       ),
     );
