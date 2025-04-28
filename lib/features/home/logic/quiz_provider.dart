@@ -3,9 +3,7 @@ import 'package:quizly/features/home/data/models/quiz_model.dart';
 import 'package:quizly/features/home/data/service/quiz_service.dart';
 
 class QuizProvider with ChangeNotifier{
-  final QuizService quizService;
-
-  QuizProvider(this.quizService);
+  final QuizService _quizService = QuizService();
 
   List<QuizModel> _quizzes = [];
   bool _isLoading = false;
@@ -18,7 +16,7 @@ class QuizProvider with ChangeNotifier{
     notifyListeners();
 
     try{
-      _quizzes = await quizService.getQuizzes(); 
+      _quizzes = await _quizService.getQuizzes(); 
     } catch (e) {
       throw Exception('Error fetching quizzes: $e');
     }
