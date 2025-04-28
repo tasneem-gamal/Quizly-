@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/spacing.dart';
-import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/core/theme/styles.dart';
 import 'package:quizly/features/home/ui/widgets/custom_answer_button.dart';
 
@@ -25,6 +24,7 @@ class QuizViewBody extends StatelessWidget {
             softWrap: true,
           ),
           CustomAnswerButton(
+            text: 'Germany',
             onPressed: (){},
           )
         ],

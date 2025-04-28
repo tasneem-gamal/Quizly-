@@ -4,10 +4,11 @@ import 'package:quizly/core/theme/styles.dart';
 
 class CustomAnswerButton extends StatelessWidget {
   const CustomAnswerButton({
-    super.key, required this.onPressed,
+    super.key, required this.onPressed, required this.text,
   });
 
   final Function() onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CustomAnswerButton extends StatelessWidget {
           )
         ),
         child: Text(
-          'Germany',
+          text,
           style: CustomTextStyles.font24WhiteSemiBold().copyWith(
             color: ColorsManager.mainBlue
           ),
