@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/features/home/data/models/quiz_model.dart';
+import 'package:quizly/features/home/data/models/quiz_question_model.dart';
 import 'package:quizly/features/home/data/service/quiz_service.dart';
 
 class QuizProvider with ChangeNotifier{
@@ -7,9 +8,20 @@ class QuizProvider with ChangeNotifier{
 
   List<QuizModel> _quizzes = [];
   bool _isLoading = false;
+  int _currentQuestionIndex = 0;
+
 
   List<QuizModel> get quizzes => _quizzes;
   bool get isLoading => _isLoading;
+  
+
+  QuizQuestion? get currentQuestion {
+    if (_quizzes.isEmpty) return null;
+    return _quizzes.first.questions[_currentQuestionIndex];
+  }
+  
+  int get currentQuestionNumber => _currentQuestionIndex + 1;
+  int get totalQuestions => _quizzes.isNotEmpty ? _quizzes.first.questions.length : 0;
 
   Future<void> fetchQuizzes() async{
     _isLoading = true;
