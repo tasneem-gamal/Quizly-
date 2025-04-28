@@ -5,7 +5,8 @@ import 'package:quizly/features/home/ui/widgets/question_options_list_view.dart'
 import 'package:quizly/features/home/ui/widgets/question_section.dart';
 
 class QuizViewBody extends StatefulWidget {
-  const QuizViewBody({super.key});
+  const QuizViewBody({super.key, required this.category});
+  final String category;
 
   @override
   State<QuizViewBody> createState() => _QuizViewBodyState();
@@ -13,11 +14,11 @@ class QuizViewBody extends StatefulWidget {
 
 class _QuizViewBodyState extends State<QuizViewBody> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      if (!mounted) return;
-      Provider.of<QuizProvider>(context, listen: false).fetchQuizzes();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<QuizProvider>(context, listen: false)
+          .fetchQuizzes(widget.category);
     });
   }
 

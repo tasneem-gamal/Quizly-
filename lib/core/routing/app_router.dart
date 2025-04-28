@@ -6,6 +6,7 @@ import 'package:quizly/features/onBoarding/ui/on_boarding_view.dart';
 
 class AppRouter {
   Route? generateRoutes(RouteSettings settings){
+    
     switch(settings.name){
       case Routes.onBoarding:
         return MaterialPageRoute(
@@ -18,8 +19,9 @@ class AppRouter {
         );
 
       case Routes.quizView:
+      final category = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (_) => const QuizView()
+          builder: (_) => QuizView(category: category)
         );
 
       default:

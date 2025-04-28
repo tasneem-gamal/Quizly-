@@ -13,10 +13,12 @@ class PackageListView extends StatelessWidget {
     {
       'image': 'assets/images/sports.png',
       'text': 'Sports Questions',
+      'category' : 'sports'
     },
     {
       'image': 'assets/images/programming.png',
       'text': 'Programming Questions',
+      'category' : 'programming'
     },
   ];
 
@@ -28,7 +30,10 @@ class PackageListView extends StatelessWidget {
                 image: packages[index]['image']!,
                 text: packages[index]['text']!,
                 onPressed: (){
-                  context.pushNamed(Routes.quizView);
+                  context.pushNamed(
+                    Routes.quizView,
+                    arguments: packages[index]['category'],
+                  );
                 },
               ),
           separatorBuilder: (context, index) => verticalSpace(50),

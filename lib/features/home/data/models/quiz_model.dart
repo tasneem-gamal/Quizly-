@@ -16,5 +16,5 @@ class QuizModel {
           .map((q) => QuizQuestion .fromMap(q as Map<String, dynamic>))
           .toList(),
     );
-  }
-}
+  } 
+} 

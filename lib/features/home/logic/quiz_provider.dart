@@ -23,17 +23,17 @@ class QuizProvider with ChangeNotifier{
   int get currentQuestionNumber => _currentQuestionIndex + 1;
   int get totalQuestions => _quizzes.isNotEmpty ? _quizzes.first.questions.length : 0;
 
-  Future<void> fetchQuizzes() async{
+  Future<void> fetchQuizzes(String category) async{
     _isLoading = true;
     notifyListeners();
 
     try{
-      _quizzes = await _quizService.getQuizzes(); 
+      _quizzes = await _quizService.getQuizzes(category.toLowerCase()); 
     } catch (e) {
       throw Exception('Error fetching quizzes: $e');
     }
 
     _isLoading = false;
     notifyListeners();
-  }
+  } 
 }
