@@ -9,14 +9,33 @@ class QuestionOptionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      final List<Map<String, dynamic>> packages = [
+    {
+      'text': 'Java',
+      'onPressed': (){},
+    },
+    {
+      'text': 'Kotlin',
+      'onPressed': (){},
+    },
+    {
+      'text': 'Java',
+      'onPressed': (){},
+    },
+    {
+      'text': 'Kotlin',
+      'onPressed': (){},
+    },
+  ];
+
     return ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => CustomAnswerButton(
-              text: 'Germany',
-              onPressed: () {},
+              text: packages[index]['text'],
+              onPressed: packages[index]['onPressed'],
             ),
         separatorBuilder: (context, index) => verticalSpace(12),
-        itemCount: 4);
+        itemCount: packages.length);
   }
 }
