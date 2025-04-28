@@ -4,8 +4,10 @@ import 'package:quizly/core/theme/styles.dart';
 
 class CustomAnswerButton extends StatelessWidget {
   const CustomAnswerButton({
-    super.key,
+    super.key, required this.onPressed,
   });
+
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class CustomAnswerButton extends StatelessWidget {
       width: double.infinity,
       height: 60,
       child: ElevatedButton(
-        onPressed: (){}, 
+        onPressed: onPressed, 
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12)

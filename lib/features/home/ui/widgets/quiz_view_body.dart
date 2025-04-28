@@ -24,7 +24,9 @@ class QuizViewBody extends StatelessWidget {
             style: CustomTextStyles.font24WhiteSemiBold(),
             softWrap: true,
           ),
-          CustomAnswerButton()
+          CustomAnswerButton(
+            onPressed: (){},
+          )
         ],
       ),
     );
