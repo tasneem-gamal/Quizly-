@@ -19,6 +19,6 @@ class CustomTextStyles{
   static TextStyle font16LightGrayRegular() => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightHelper.regular,
-        color: ColorsManager.lightGray,
+        color: const Color.fromARGB(255, 233, 233, 233),
       );
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/extension.dart';
 import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/features/home/ui/widgets/circle_timer.dart';
+import 'package:quizly/features/home/ui/widgets/quiz_view_body.dart';
 
 class QuizView extends StatelessWidget {
   const QuizView({super.key});
@@ -23,6 +24,7 @@ class QuizView extends StatelessWidget {
         // title: CircleTimer(totalSeconds: 60,),
         centerTitle: true,
       ),
+      body: const QuizViewBody(),
     );
   }
 }
