@@ -1,4 +1,4 @@
-import 'package:quizly/features/home/data/models/quiz_reponse_model.dart';
+import 'package:quizly/features/home/data/models/quiz_question_model.dart';
 
 class QuizModel {
   final String category;
