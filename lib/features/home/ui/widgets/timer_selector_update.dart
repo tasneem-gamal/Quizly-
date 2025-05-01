@@ -10,12 +10,17 @@ class TimerSelectorUpdate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Selector<QuizProvider, int>(
-      selector: (_, provider) => provider.currentQuestionNumber,
-      builder: (context, currentQuestionNumber, _) {
+    return Selector<QuizProvider, bool>(
+      selector: (_, provider) => provider.isLoading,
+      builder: (context, isLoading, _) {
+        if(isLoading){
+          return const SizedBox();
+        }
+        final currentQuestionNumber =
+        context.select<QuizProvider, int>((p) => p.currentQuestionNumber);
         return CircleTimer(
           key: ValueKey(currentQuestionNumber),
-          totalSeconds: 5,
+          totalSeconds: 10,
           onTimeComplete: () {
             context.read<QuizProvider>().nextQuestion();
           },
