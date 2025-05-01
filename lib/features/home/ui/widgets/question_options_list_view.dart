@@ -23,7 +23,12 @@ class QuestionOptionsListView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => CustomAnswerButton(
               text: question.options[index],
-              onPressed: (){},
+              onPressed: () async {
+                quizProvider.selectAnswer(question.options[index]);
+                await Future.delayed(const Duration(seconds: 1));
+                quizProvider.nextQuestion();
+              },
+              color: quizProvider.getAnswerColor(question.options[index]),
             ),
         separatorBuilder: (context, index) => verticalSpace(12),
         itemCount: question.options.length);
