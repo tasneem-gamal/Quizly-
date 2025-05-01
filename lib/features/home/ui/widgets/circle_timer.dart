@@ -6,9 +6,10 @@ import 'package:quizly/core/theme/styles.dart';
 
 class CircleTimer extends StatefulWidget {
   const CircleTimer({
-    super.key, required this.totalSeconds,
+    super.key, required this.totalSeconds, this.onTimeComplete,
   });
   final int totalSeconds;
+  final Function()? onTimeComplete;
 
   @override
   State<CircleTimer> createState() => _CircleTimerState();
@@ -17,12 +18,12 @@ class CircleTimer extends StatefulWidget {
 class _CircleTimerState extends State<CircleTimer> with SingleTickerProviderStateMixin {
   late AnimationController _circleTimerController;
   late Timer _timer;
-  late int _totalSeconds;
+  late int _remainingSeconds;
 
   @override
   void initState() {
     super.initState();
-    _totalSeconds = widget.totalSeconds;
+    _remainingSeconds = widget.totalSeconds;
     _circleTimerController = AnimationController(
       vsync: this,
       duration: Duration(seconds: widget.totalSeconds),
@@ -33,11 +34,14 @@ class _CircleTimerState extends State<CircleTimer> with SingleTickerProviderStat
 
   void _startTimer(){
     _timer = Timer.periodic(const Duration(seconds: 1), (timer){
-      if(_totalSeconds == 0){
+      if(_remainingSeconds == 0){
         timer.cancel();
+        if(widget.onTimeComplete != null){
+          widget.onTimeComplete!();
+        }
       } else {
         setState(() {
-          _totalSeconds--;
+          _remainingSeconds--;
         });
       }
     });
@@ -73,7 +77,7 @@ class _CircleTimerState extends State<CircleTimer> with SingleTickerProviderStat
               ),
             ),
             Text(
-              '$_totalSeconds',
+              '$_remainingSeconds',
               style: CustomTextStyles.font24WhiteSemiBold(),
             ),
           ],
