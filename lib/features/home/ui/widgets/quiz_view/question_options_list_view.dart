@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/widgets/shimmer_loading_options.dart';
 import 'package:quizly/features/home/logic/quiz_provider.dart';
-import 'package:quizly/features/home/ui/widgets/custom_answer_button.dart';
+import 'package:quizly/features/home/ui/widgets/quiz_view/custom_answer_button.dart';
 
 class QuestionOptionsListView extends StatelessWidget {
   const QuestionOptionsListView({

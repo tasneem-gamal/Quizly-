@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quizly/features/home/logic/quiz_provider.dart';
-import 'package:quizly/features/home/ui/widgets/question_options_list_view.dart';
-import 'package:quizly/features/home/ui/widgets/question_section.dart';
+import 'package:quizly/features/home/ui/widgets/quiz_view/question_options_list_view.dart';
+import 'package:quizly/features/home/ui/widgets/quiz_view/question_section.dart';
 
 class QuizViewBody extends StatefulWidget {
   const QuizViewBody({super.key, required this.category});
