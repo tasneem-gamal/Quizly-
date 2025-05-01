@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quizly/core/helpers/spacing.dart';
+import 'package:quizly/core/widgets/shimmer_loading_options.dart';
 import 'package:quizly/features/home/logic/quiz_provider.dart';
 import 'package:quizly/features/home/ui/widgets/custom_answer_button.dart';
 
@@ -15,7 +16,7 @@ class QuestionOptionsListView extends StatelessWidget {
     final question = quizProvider.currentQuestion;
 
     if (question == null) {
-      return const Center(child: CircularProgressIndicator());
+      return const ShimmerLoadingOptions();
     }
 
     return ListView.separated(

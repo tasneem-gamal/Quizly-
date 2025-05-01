@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
+import 'package:quizly/core/widgets/shimmer_loading_question.dart';
 import 'package:quizly/features/home/logic/quiz_provider.dart';
 
 class QuestionSection extends StatelessWidget {
@@ -14,7 +15,7 @@ class QuestionSection extends StatelessWidget {
     final quizProvider = Provider.of<QuizProvider>(context);
     final question = quizProvider.currentQuestion;
     if (question == null) {
-      return const Center(child: CircularProgressIndicator());
+      return const ShimmerLoadingQuestion();
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
