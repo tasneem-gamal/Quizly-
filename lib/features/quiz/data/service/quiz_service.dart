@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:quizly/features/home/data/models/quiz_model.dart';
+import 'package:quizly/features/quiz/data/models/quiz_model.dart';
 
 class QuizService {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;

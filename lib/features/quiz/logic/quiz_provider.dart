@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/core/theme/colors.dart';
-import 'package:quizly/features/home/data/models/quiz_model.dart';
-import 'package:quizly/features/home/data/models/quiz_question_model.dart';
-import 'package:quizly/features/home/data/service/quiz_service.dart';
+import 'package:quizly/features/quiz/data/models/quiz_model.dart';
+import 'package:quizly/features/quiz/data/models/quiz_question_model.dart';
+import 'package:quizly/features/quiz/data/service/quiz_service.dart';
 
 class QuizProvider with ChangeNotifier {
   final QuizService _quizService = QuizService();

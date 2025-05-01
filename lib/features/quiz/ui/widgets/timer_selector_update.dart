@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quizly/features/home/logic/quiz_provider.dart';
-import 'package:quizly/features/home/ui/widgets/quiz_view/circle_timer.dart';
+import 'package:quizly/features/quiz/logic/quiz_provider.dart';
+import 'package:quizly/features/quiz/ui/widgets/circle_timer.dart';
 
 class TimerSelectorUpdate extends StatelessWidget {
   const TimerSelectorUpdate({

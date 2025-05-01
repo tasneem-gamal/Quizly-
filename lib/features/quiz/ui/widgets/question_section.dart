@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
 import 'package:quizly/core/widgets/shimmer_loading_question.dart';
-import 'package:quizly/features/home/logic/quiz_provider.dart';
+import 'package:quizly/features/quiz/logic/quiz_provider.dart';
 
 class QuestionSection extends StatelessWidget {
   const QuestionSection({

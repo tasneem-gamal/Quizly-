@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/extension.dart';
 import 'package:quizly/core/theme/colors.dart';
-import 'package:quizly/features/home/ui/widgets/quiz_view/quiz_view_body.dart';
-import 'package:quizly/features/home/ui/widgets/quiz_view/timer_selector_update.dart';
+import 'package:quizly/features/quiz/ui/widgets/quiz_view_body.dart';
+import 'package:quizly/features/quiz/ui/widgets/timer_selector_update.dart';
 
 class QuizView extends StatelessWidget {
   const QuizView({super.key, required this.category});
