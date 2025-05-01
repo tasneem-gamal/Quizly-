@@ -16,8 +16,8 @@ class ShimmerLoadingQuestion extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Shimmer.fromColors(
-                baseColor: ColorsManager.shimmerColorLoading,
-                highlightColor: ColorsManager.shimmerHighlight,
+                baseColor: ColorsManager.shimmerColorLoading.withOpacity(0.2),
+                highlightColor: ColorsManager.shimmerHighlight.withOpacity(0.4),
                 child: Container(
                   width: 60.w,
                   height: 20.h,
@@ -30,8 +30,8 @@ class ShimmerLoadingQuestion extends StatelessWidget {
               ),
               verticalSpace(10),
               Shimmer.fromColors(
-                baseColor: ColorsManager.shimmerColorLoading,
-                highlightColor: Colors.white,
+                baseColor: ColorsManager.shimmerColorLoading.withOpacity(0.2),
+                highlightColor: ColorsManager.shimmerHighlight.withOpacity(0.4),
                 child: Container(
                   width: double.infinity,
                   height: 20.h,
