@@ -18,19 +18,17 @@ class _QuizViewBodyState extends State<QuizViewBody> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
     final quizProvider = Provider.of<QuizProvider>(context, listen: false);
     final controller = QuizController();
-    controller.loadQuizzes(quizProvider, widget.category);
+    if (mounted) {
+        await controller.loadQuizzes(quizProvider, widget.category);
+      }
   });
   }
 
   @override
   Widget build(BuildContext context) {
-    final quizProvider = Provider.of<QuizProvider>(context);
-    if (quizProvider.isFinished) {
-      return const SizedBox();
-    }
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
       child: Column(

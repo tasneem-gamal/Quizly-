@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quizly/core/helpers/extension.dart';
 import 'package:quizly/core/helpers/spacing.dart';
+import 'package:quizly/core/routing/routes.dart';
 import 'package:quizly/core/widgets/shimmer_loading_options.dart';
 import 'package:quizly/features/quiz/logic/quiz_provider.dart';
 import 'package:quizly/features/quiz/ui/widgets/custom_answer_button.dart';
@@ -17,6 +19,14 @@ class QuestionOptionsListView extends StatelessWidget {
 
     if (question == null) {
       return const ShimmerLoadingOptions();
+    }
+
+    if (quizProvider.currentQuestionNumber == quizProvider.totalQuestions) {
+      Future.delayed(const Duration(seconds: 1), () {
+        if(context.mounted){
+          context.pushReplacementNamed(Routes.scoreView);
+        }
+      });
     }
 
     return ListView.separated(
