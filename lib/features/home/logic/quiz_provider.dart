@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/features/home/data/models/quiz_model.dart';
 import 'package:quizly/features/home/data/models/quiz_question_model.dart';
 import 'package:quizly/features/home/data/service/quiz_service.dart';
@@ -29,6 +30,11 @@ class QuizProvider with ChangeNotifier {
 
   Future<void> fetchQuizzes(String category) async {
     _isLoading = true;
+
+    _quizzes = [];
+    _currentQuestionIndex = 0;
+    _selectedAnswer = null;
+    _hasAnswered = false;
     notifyListeners();
 
     try {
@@ -42,7 +48,7 @@ class QuizProvider with ChangeNotifier {
   }
 
   void selectAnswer(String answer) {
-    if (_hasAnswered) return; // يمنع اختيار إجابة تانية
+    if (_hasAnswered) return;
     _selectedAnswer = answer;
     _hasAnswered = true;
     notifyListeners();
@@ -52,7 +58,7 @@ class QuizProvider with ChangeNotifier {
     if (!_hasAnswered) return Colors.grey[200]!;
 
     if (answer == currentQuestion!.answer) {
-      return Colors.yellow;
+      return ColorsManager.customYellow;
     } else if (answer == _selectedAnswer) {
       return Colors.red;
     } else {
