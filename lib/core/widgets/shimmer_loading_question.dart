@@ -17,7 +17,7 @@ class ShimmerLoadingQuestion extends StatelessWidget {
             children: [
               Shimmer.fromColors(
                 baseColor: ColorsManager.shimmerColorLoading,
-                highlightColor: Colors.white,
+                highlightColor: ColorsManager.shimmerHighlight,
                 child: Container(
                   width: 60.w,
                   height: 20.h,
