@@ -2,10 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quizly/core/routing/app_router.dart';
-import 'package:quizly/features/quiz/logic/quiz_provider.dart';
 import 'package:quizly/firebase_options.dart';
 import 'package:quizly/quizly.dart';
-import 'package:provider/provider.dart';
 
 void main() async{
   await ScreenUtil.ensureScreenSize();
@@ -14,10 +12,7 @@ void main() async{
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => QuizProvider(),
-      child: Quizly(appRouter: AppRouter(),)
-    )
+    Quizly(appRouter: AppRouter(),)
   );
 }
 
