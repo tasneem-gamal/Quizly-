@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quizly/features/quiz/logic/quiz_controller.dart';
 import 'package:quizly/features/quiz/logic/quiz_provider.dart';
 import 'package:quizly/features/quiz/ui/widgets/question_options_list_view.dart';
 import 'package:quizly/features/quiz/ui/widgets/question_section.dart';
@@ -13,17 +14,23 @@ class QuizViewBody extends StatefulWidget {
 }
 
 class _QuizViewBodyState extends State<QuizViewBody> {
+  
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Provider.of<QuizProvider>(context, listen: false)
-          .fetchQuizzes(widget.category);
-    });
+    final quizProvider = Provider.of<QuizProvider>(context, listen: false);
+    final controller = QuizController();
+    controller.loadQuizzes(quizProvider, widget.category);
+  });
   }
 
   @override
   Widget build(BuildContext context) {
+    final quizProvider = Provider.of<QuizProvider>(context);
+    if (quizProvider.isFinished) {
+      return const SizedBox();
+    }
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
       child: Column(
