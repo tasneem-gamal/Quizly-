@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/features/home/ui/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,7 +8,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 252, 250, 230),
+      backgroundColor: ColorsManager.customCreamyColor,
       body: SafeArea(child: HomeViewBody()),
     );
   }
