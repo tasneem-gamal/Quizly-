@@ -11,7 +11,7 @@ class ScoreViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: Constants.appPadding,
+      padding: Constants.scoreViewPadding,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

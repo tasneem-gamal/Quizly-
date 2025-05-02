@@ -12,7 +12,6 @@ class ScoreContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280.w,
       height: 90.h,
       decoration: BoxDecoration(
         color: ColorsManager.otherLightGrayShade,
