@@ -22,6 +22,12 @@ class CustomTextStyles{
         color: const Color.fromARGB(255, 233, 233, 233),
       );
 
+  static TextStyle font14BlackRegular() => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: Colors.black,
+      );
+
   static TextStyle font16GrayRegular() => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightHelper.regular,
@@ -34,6 +40,12 @@ class CustomTextStyles{
       );
   static TextStyle font24WhiteMedium() => TextStyle(
         fontSize: 24.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Colors.white
+      );
+
+  static TextStyle font18WhiteMedium() => TextStyle(
+        fontSize: 18.sp,
         fontWeight: FontWeightHelper.medium,
         color: Colors.white
       );
