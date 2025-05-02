@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizly/core/helpers/extension.dart';
 import 'package:quizly/core/helpers/spacing.dart';
+import 'package:quizly/core/routing/routes.dart';
 import 'package:quizly/core/theme/colors.dart';
 import 'package:quizly/core/widgets/custom_text_button.dart';
 
@@ -15,7 +17,9 @@ class ScoreButtons extends StatelessWidget {
       children: [
         Expanded(
           child: CustomTextButton(
-            onPressed: (){},
+            onPressed: (){
+              context.pushNamed(Routes.homeView);
+            },
             text: 'Home',
             backgroundColor: Colors.white,
           ),

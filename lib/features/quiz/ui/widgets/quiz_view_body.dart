@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quizly/core/helpers/constants.dart';
 import 'package:quizly/features/quiz/logic/quiz_controller.dart';
 import 'package:quizly/features/quiz/logic/quiz_provider.dart';
 import 'package:quizly/features/quiz/ui/widgets/question_options_list_view.dart';
@@ -30,7 +31,7 @@ class _QuizViewBodyState extends State<QuizViewBody> {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+      padding: Constants.appPadding,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizly/core/helpers/constants.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
 import 'package:quizly/features/home/ui/widgets/package_list_view.dart';
@@ -9,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      padding: Constants.appPadding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
