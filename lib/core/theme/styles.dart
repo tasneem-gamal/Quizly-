@@ -28,6 +28,12 @@ class CustomTextStyles{
         color: Colors.black,
       );
 
+  static TextStyle font14BlackMedium() => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: Colors.black,
+      );
+
   static TextStyle font16GrayRegular() => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightHelper.regular,

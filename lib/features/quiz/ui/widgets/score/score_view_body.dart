@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizly/core/helpers/constants.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
+import 'package:quizly/features/quiz/ui/widgets/score/score_buttons.dart';
 import 'package:quizly/features/quiz/ui/widgets/score/score_container.dart';
 
 class ScoreViewBody extends StatelessWidget {
@@ -21,11 +22,14 @@ class ScoreViewBody extends StatelessWidget {
               style: CustomTextStyles.font18WhiteMedium(),
             ),
             verticalSpace(16),
-            const ScoreContainer()
+            const ScoreContainer(),
+            verticalSpace(16),
+            const ScoreButtons()
           ],
         ),
       ),
     );
   }
 }
+
 
