@@ -21,14 +21,6 @@ class QuestionOptionsListView extends StatelessWidget {
       return const ShimmerLoadingOptions();
     }
 
-    if (quizProvider.currentQuestionNumber == quizProvider.totalQuestions) {
-      Future.delayed(const Duration(seconds: 1), () {
-        if (context.mounted) {
-          context.pushReplacementNamed(Routes.scoreView);
-        }
-      });
-    }
-
     return ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
