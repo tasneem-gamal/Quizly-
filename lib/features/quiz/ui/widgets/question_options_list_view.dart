@@ -23,7 +23,7 @@ class QuestionOptionsListView extends StatelessWidget {
 
     if (quizProvider.currentQuestionNumber == quizProvider.totalQuestions) {
       Future.delayed(const Duration(seconds: 1), () {
-        if(context.mounted){
+        if (context.mounted) {
           context.pushReplacementNamed(Routes.scoreView);
         }
       });
@@ -37,7 +37,14 @@ class QuestionOptionsListView extends StatelessWidget {
               onPressed: () async {
                 quizProvider.selectAnswer(question.options[index]);
                 await Future.delayed(const Duration(seconds: 1));
-                quizProvider.nextQuestion();
+                if (quizProvider.currentQuestionNumber ==
+                    quizProvider.totalQuestions) {
+                  if (context.mounted) {
+                    context.pushReplacementNamed(Routes.scoreView);
+                  }
+                } else {
+                  quizProvider.nextQuestion();
+                }
               },
               color: quizProvider.getAnswerColor(question.options[index]),
             ),
