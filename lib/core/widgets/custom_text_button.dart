@@ -6,12 +6,13 @@ class CustomTextButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.backgroundColor,
-    required this.text,
+    required this.text, this.textStyle,
   });
 
   final Function() onPressed;
   final Color backgroundColor;
   final String text;
+  final TextStyle? textStyle;
   
 
   @override
@@ -26,7 +27,7 @@ class CustomTextButton extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: CustomTextStyles.font14BlackRegular(),
+        style: textStyle ?? CustomTextStyles.font14BlackRegular(),
       )
     );
   }
