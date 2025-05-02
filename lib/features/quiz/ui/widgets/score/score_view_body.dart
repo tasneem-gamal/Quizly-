@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quizly/core/helpers/constants.dart';
 import 'package:quizly/core/helpers/spacing.dart';
 import 'package:quizly/core/theme/styles.dart';
 import 'package:quizly/features/quiz/ui/widgets/score/score_buttons.dart';
 import 'package:quizly/features/quiz/ui/widgets/score/score_container.dart';
 
+import '../../../logic/quiz_provider.dart';
+
 class ScoreViewBody extends StatelessWidget {
   const ScoreViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final quizProvider = Provider.of<QuizProvider>(context);
     return Padding(
       padding: Constants.scoreViewPadding,
       child: Center(
@@ -18,7 +22,7 @@ class ScoreViewBody extends StatelessWidget {
           children: [
             Image.asset('assets/images/cup_prize.png'),
             Text(
-              'Congratulations!',
+              quizProvider.calculatePercentageMessage(),
               style: CustomTextStyles.font18WhiteMedium(),
             ),
             verticalSpace(16),
