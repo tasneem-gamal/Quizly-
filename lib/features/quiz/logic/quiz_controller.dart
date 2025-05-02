@@ -9,7 +9,7 @@ class QuizController {
     provider.setLoading(true);
     try{
       final quizzes = await _quizService.getQuizzes(category);
-      provider.setQuizzes(quizzes);
+      provider.setQuizzes(quizzes, category);
     } catch (e){
       debugPrint(e.toString());
     }

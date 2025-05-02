@@ -10,26 +10,47 @@ class QuizProvider with ChangeNotifier {
   int _currentQuestionIndex = 0;
   String? _selectedAnswer;
   bool _hasAnswered = false;
+  int _correctAnswers = 0;
+  int _incorrectAnswers = 0;
+  String _selectedCategory = '';
   List<QuizModel> _quizzes = [];
   
   bool get isLoading => _isLoading;
   bool get isFinished => _isFinished;
+  int get correctAnswers => _correctAnswers;
+  int get incorrectAnswers => _incorrectAnswers;
   int get currentQuestionNumber => _currentQuestionIndex + 1;
   int get totalQuestions => _quizzes.isNotEmpty ? _quizzes.first.questions.length : 0;
   QuizQuestion? get currentQuestion => _quizzes.isNotEmpty ? _quizzes.first.questions[_currentQuestionIndex] : null;
   String? get selectedAnswer => _selectedAnswer;
   bool get hasAnswered => _hasAnswered;
+  String get selectedCategory => _selectedCategory;
+  List<QuizModel> get quizzes => _quizzes;
 
   void setLoading(bool value) {
     _isLoading = value;
     notifyListeners();
   }
 
-  void setQuizzes(List<QuizModel> quizzes) {
+  void setQuizzes(List<QuizModel> quizzes, String category) {
     _quizzes = quizzes;
+    _selectedCategory = category;
     _currentQuestionIndex = 0;
     _selectedAnswer = null;
     _hasAnswered = false;
+    _isFinished = false;
+    _correctAnswers = 0;
+    _incorrectAnswers = 0;
+    notifyListeners();
+}
+  
+  void resetQuiz() {
+    _currentQuestionIndex = 0;
+    _selectedAnswer = null;
+    _hasAnswered = false;
+    _isFinished = false;
+    _correctAnswers = 0;
+    _incorrectAnswers = 0;
     notifyListeners();
   }
 
@@ -53,6 +74,12 @@ class QuizProvider with ChangeNotifier {
     if (_hasAnswered) return;
     _selectedAnswer = answer;
     _hasAnswered = true;
+
+    if(answer == currentQuestion!.answer){
+      _correctAnswers++;
+    } else{
+      _incorrectAnswers++;
+    }
     notifyListeners();
   }
 
