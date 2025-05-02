@@ -27,4 +27,14 @@ class CustomTextStyles{
         fontWeight: FontWeightHelper.regular,
         color: ColorsManager.lightGray
       );
+  static TextStyle font16BlackMedium() => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Colors.black
+      );
+  static TextStyle font24WhiteMedium() => TextStyle(
+        fontSize: 24.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Colors.white
+      );
 }
