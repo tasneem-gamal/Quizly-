@@ -32,12 +32,13 @@ class QuizProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  String calculatePercentageMessage() {
+  String congratMessage() {
     final correct = _correctAnswers;
-    final total = _quizzes.isNotEmpty ? _quizzes.first.questions.length : 0;
-    final percentage = (correct / total) * 100;
+    final incorrect = _incorrectAnswers;
+    // final total = _quizzes.isNotEmpty ? _quizzes.first.questions.length : 0;
+    // final percentage = (correct / total) * 100;
 
-    if (percentage >= 70) {
+    if (correct > incorrect) {
       return 'Congratulations!';
     } else {
       return 'You can try again!';

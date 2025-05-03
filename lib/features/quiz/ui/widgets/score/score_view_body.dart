@@ -22,7 +22,7 @@ class ScoreViewBody extends StatelessWidget {
           children: [
             Image.asset('assets/images/cup_prize.png'),
             Text(
-              quizProvider.calculatePercentageMessage(),
+              quizProvider.congratMessage(),
               style: CustomTextStyles.font18WhiteMedium(),
             ),
             verticalSpace(16),
